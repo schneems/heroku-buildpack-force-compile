@@ -48,7 +48,7 @@ for BUILDPACK in $(cat $1/.buildpacks); do
       $dir/bin/compile $1 $2 $3
 
       if [ $? != 0 ]; then
-        exit 1
+        echo "=====> Failed, continuing anyway"
       fi
 
       if [ -x $dir/bin/release ]; then
